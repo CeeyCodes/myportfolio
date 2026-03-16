@@ -347,24 +347,24 @@
         </a>
       </div>
     </div>
-    <div class="reveal">
+    <form class="reveal" action="https://formspree.io/f/mgonnazq" method="POST">
       <p class="section-label">Send a Message</p>
       <div class="contact-form">
         <div class="form-group">
           <label class="form-label">Your Name</label>
-          <input type="text" id="from_name" class="form-input" placeholder="Jane Smith" />
+          <input type="text" id="from_name" class="form-input" name="name" placeholder="Jane Smith" />
         </div>
         <div class="form-group">
           <label class="form-label">Email Address</label>
-          <input type="email" id="from_email" class="form-input" placeholder="jane@example.com" />
+          <input type="email" id="from_email" class="form-input" name="email" placeholder="jane@example.com" />
         </div>
         <div class="form-group">
           <label class="form-label">Project Brief</label>
-          <textarea class="form-input" rows="5" placeholder="Tell me about your project, timeline, and what you're hoping to achieve..."></textarea>
+          <textarea class="form-input" rows="5" name="message" placeholder="Tell me about your project, timeline, and what you're hoping to achieve..."></textarea>
         </div>
         <button id="message" class="btn btn-primary btn-full" id="sendBtn">Send Message →</button>
       </div>
-    </div>
+    </form>
   </section>
 
   <!-- Footer -->
@@ -379,9 +379,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    emailjs.init("BjKyLN66mWpTFwp6a");
-  </script>
 </body>
 </html>

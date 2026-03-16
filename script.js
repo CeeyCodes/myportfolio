@@ -116,57 +116,6 @@ if (badges.length > 0) {
   }, 2000);
 }
 
-/* Contact Form — EmailJS */
-const sendBtn = document.getElementById('sendBtn');
-
-if (sendBtn) {
-  sendBtn.addEventListener('click', () => {
-    const fromName  = document.getElementById('from_name').value.trim();
-    const fromEmail = document.getElementById('from_email').value.trim();
-    const message   = document.getElementById('message').value.trim();
-
-    // Basic validation
-    if (!fromName || !fromEmail || !message) {
-      alert('Please fill in all fields before sending.');
-      return;
-    }
-
-    // Loading state
-    sendBtn.textContent = 'Sending...';
-    sendBtn.disabled = true;
-
-    const templateParams = {
-      from_name:  fromName,
-      from_email: fromEmail,
-      message:    message,
-    };
-
-    emailjs.send('service_ablhfgm', 'template_h5jme1s', templateParams)
-      .then(() => {
-        sendBtn.textContent = 'Message Sent ✓';
-        sendBtn.style.opacity = '0.7';
-
-        // Clear fields
-        document.getElementById('from_name').value  = '';
-        document.getElementById('from_email').value = '';
-        document.getElementById('message').value    = '';
-
-        // Reset button after 3 seconds
-        setTimeout(() => {
-          sendBtn.textContent  = 'Send Message →';
-          sendBtn.style.opacity = '1';
-          sendBtn.disabled = false;
-        }, 3000);
-      })
-      .catch((error) => {
-        console.error('EmailJS error:', error);
-        sendBtn.textContent = 'Failed. Try Again.';
-        sendBtn.disabled = false;
-      });
-  });
-}
-
-
 /*Smooth Active Nav Link Highlighting */
 const sections  = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a');
